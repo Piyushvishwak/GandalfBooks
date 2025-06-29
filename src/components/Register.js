@@ -17,7 +17,12 @@ function Register() {
     const userData = { username, email, password };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', userData);
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/auth/register`,
+        userData,
+        { withCredentials: true }
+      );
+
       setSuccess(response.data.message);
       setError('');
       setUsername('');
