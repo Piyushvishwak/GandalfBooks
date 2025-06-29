@@ -18,7 +18,7 @@ app.use(session({
 }));
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://your-vercel-site.vercel.app'
+  'https://gandalf-books.vercel.app'
 ];
 
 app.use(cors({
